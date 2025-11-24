@@ -2,7 +2,7 @@
 
 #kill the process consuming the most memory
 
-pid=$(ps aux --sort=-%mem | awk 'NR==2 {print $2}' )
+pid=$(ps aux --sort=-%mem | awk 'NR==2 {print $2}' )      # ps aux = It shows all running processes on the system
 
 kill -9 $pid
 

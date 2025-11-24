@@ -1,17 +1,14 @@
 #!/bin/bash
 
-echo "enter your file name"
-read file
+# send alert when disk usage hits at threshold
 
-timestamp=$(date +%Y-%m-%d_%H-%M-%S)
+threshold=70
 
-backup_file=${file}-backup-$timestamp
+usage=$( df -h / | grep / | awk '{print $5}' | sed 's/%//g' )
 
-
-if cp $file $backup_file ;then
-     echo "done!"
-else
-        echo "try again later"
-fi 
-
-
+if [ "$usage" -ge "$threshold" ];
+then 
+   echo "warning: disk usage is high"
+else 
+   echo "disk usage is ok"
+fi
