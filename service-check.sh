@@ -22,3 +22,21 @@ for svc in "${services[@]}"; do
         echo "$svc is NOT running"
     fi
 done
+
+## --quite :: It suppresses output and returns only the exit status.
+
+## I used shell scripts to monitor services and automatically restart them if required.
+
+#!/bin/bash
+
+SERVICE="nginx"
+
+systemctl is-active --quiet $SERVICE
+
+if [ $? -ne 0 ]; then
+  systemctl restart $SERVICE
+  echo "$SERVICE restarted"
+else
+  echo "$SERVICE is running"
+fi
+

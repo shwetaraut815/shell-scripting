@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # send alert when disk usage hits at threshold
+## I used shell scripts to monitor disk usage and alert when it crossed a threshold.
 
 threshold=70
 
@@ -12,3 +13,4 @@ then
 else 
    echo "disk usage is ok"
 fi
+
