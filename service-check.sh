@@ -23,7 +23,7 @@ for svc in "${services[@]}"; do
     fi
 done
 
-## --quite :: It suppresses output and returns only the exit status.
+### --quite :: It suppresses output and returns only the exit status.
 
 ## I used shell scripts to monitor services and automatically restart them if required.
 
