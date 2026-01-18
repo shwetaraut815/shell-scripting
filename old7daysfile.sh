@@ -18,6 +18,6 @@ echo "7 days old logs compressed and moved to $move"
 
 LOG_DIR="/var/log/myapp"
 
-find $LOG_DIR -type f -mtime +7 -delete
+find $LOG_DIR -type f -mtime +7 -delete  
 
 echo "Old logs cleaned"

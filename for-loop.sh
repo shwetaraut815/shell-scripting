@@ -9,3 +9,5 @@ for dir in "${directory[@]}";
    echo "========"
    du -sh "$dir"
  done
+
+
