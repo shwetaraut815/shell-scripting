@@ -7,7 +7,7 @@ S3_BUCKET="s3://backup-log-3836/httpd-logs"       # Replace with your bucket
 
 aws s3 mb s3://backup-log-3836
 
-cat "$ACCESS_LOG" >> "$TMP_LOG"
+cat "$ACCESS_LOG" >> "$TMP_LOG"  ##move content from there
 
 aws s3 cp "$TMP_LOG" "$S3_BUCKET/$(date +%F)_access.log"
 
